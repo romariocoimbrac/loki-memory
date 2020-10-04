@@ -1,4 +1,4 @@
-let qtdActiveMemoryCard = 0;
+//const createCardWrapper = (function () {
 function createCardsWrapper() {
   const $cardsWrapper = document.createElement("section");
   $cardsWrapper.classList.add("cards-wrapper");
@@ -19,9 +19,12 @@ function createCardsWrapper() {
   $head.insertBefore($style, null);
 
   $cardsWrapper.addEventListener("click", () => {
-    qtdActiveMemoryCard = $cardsWrapper.querySelectorAll(".memory-card.-active")
-      .length;
+    store.qtdActiveMemoryCard = $cardsWrapper.querySelectorAll(
+      ".memory-card.-active",
+    ).length;
   });
 
   return $cardsWrapper;
 }
+
+//})();
