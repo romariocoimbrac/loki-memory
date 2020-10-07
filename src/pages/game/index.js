@@ -2,9 +2,10 @@
   const $root = document.querySelector("#root");
 
   const $cardsWrapper = createCardsWrapper();
-
   const createMemoryCard = memoryCard.create();
 
+  const $pointBar = pointBar.create();
+  const $gameButton = gameButton.render();
   const $memoryCardHype = createMemoryCard({
     src: "img/loki-hype.png",
     alt: "Loki Hype",
@@ -31,5 +32,7 @@
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTall);
   $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardTall);
 
+  $root.insertAdjacentHTML("afterbegin", $pointBar);
   $root.insertAdjacentElement("beforeend", $cardsWrapper);
+  $root.insertAdjacentHTML("beforeend", $gameButton);
 })();
